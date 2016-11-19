@@ -17,6 +17,9 @@ class GameScene: SKScene {
         
         let myImage = SKSpriteNode(imageNamed: "Spaceship");
         myImage.position = CGPoint(x: 0, y: 0);
+        myImage.xScale = 2;
+        myImage.yScale = 1.5;
+        myImage.zRotation = 20;
         self.addChild(myImage);
     }
 }

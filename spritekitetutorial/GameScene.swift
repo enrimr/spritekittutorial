@@ -25,8 +25,11 @@ class GameScene: SKScene {
         self.addChild(spaceshipImage);
     }
     
-    override func update(_ currentTime: TimeInterval) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         spaceshipImage.position.y += 1;
         spaceshipImage.zRotation += 0.1;
+    }
+    override func update(_ currentTime: TimeInterval) {
+
     }
 }

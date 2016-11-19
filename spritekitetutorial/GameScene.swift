@@ -10,16 +10,23 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
+    
+    let redRectangule = SKSpriteNode(color: UIColor.red, size: CGSize(width: 200, height: 140));
+    let spaceshipImage = SKSpriteNode(imageNamed: "Spaceship");
+    
     override func didMove(to view: SKView) {
-        let myNode = SKSpriteNode(color: UIColor.red, size: CGSize(width: 200, height: 140));
-        myNode.position = CGPoint(x: 0, y: 0);
-        self.addChild(myNode);
+
+        redRectangule.position = CGPoint(x: 0, y: 0);
+        self.addChild(redRectangule);
         
-        let myImage = SKSpriteNode(imageNamed: "Spaceship");
-        myImage.position = CGPoint(x: 0, y: 0);
-        myImage.xScale = 2;
-        myImage.yScale = 1.5;
-        myImage.zRotation = 20;
-        self.addChild(myImage);
+        spaceshipImage.position = CGPoint(x: 0, y: 0);
+        spaceshipImage.setScale(0.25);
+        spaceshipImage.zRotation = 1;
+        self.addChild(spaceshipImage);
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        spaceshipImage.position.y += 1;
+        spaceshipImage.zRotation += 0.1;
     }
 }
